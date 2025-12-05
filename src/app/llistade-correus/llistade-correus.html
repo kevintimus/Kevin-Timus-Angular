@@ -1,0 +1,21 @@
+<p>{{ correus[0].titol }}</p>
+<p>{{ correus[1].titol }}</p>
+
+<p [ngStyle]="{ color: correus[0].llegit ? 'black' : 'yellow' }">
+  {{ correus[0].titol }}
+</p>
+<p [ngStyle]="{ color: correus[1].llegit ? 'black' : 'yellow' }">
+  {{ correus[1].titol }}
+</p>
+
+<ul>
+  <li *ngIf="!correus[0].llegit">
+    {{ correus[0].titol }}
+  </li>
+  <li *ngIf="!correus[1].llegit">
+    {{ correus[1].titol }}
+  </li>
+
+  <p>Correus llegits: {{ llegits }}</p>
+  <p>Correus no llegits: {{ noLlegits }}</p>
+</ul>
